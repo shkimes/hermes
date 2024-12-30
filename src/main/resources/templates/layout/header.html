@@ -10,7 +10,10 @@
         <a href="#">CROCS</a>
     </nav>
     <div class="sign-in">
-        <a href="#">Sign In</a>
+        <a th:if="${loggedInUser == null}" href="/signup">회원가입</a>
+        <a th:if="${loggedInUser == null}" href="/login">로그인</a>
+        <a th:if="${loggedInUser != null}" href="/mypage">마이페이지</a>
+        <a th:if="${loggedInUser != null}" href="/logout">로그아웃</a>
         <img src="/images/user-icon.png" alt="User Icon">
     </div>
 </header>

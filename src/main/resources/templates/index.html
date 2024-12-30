@@ -7,10 +7,9 @@
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
-<th:block th:replace="header :: header"></th:block>
+<th:block th:replace="~{layout/header :: header}"></th:block>
 
-
-<th:block th:replace="footer :: footer"></th:block>
+<th:block th:replace="~{layout/footer :: footer}"></th:block>
 
 
 </body>

@@ -8,6 +8,29 @@
         SELECT * FROM USER
     </select>
 
+    <select id="login">
+        SELECT *
+        FROM USER
+        WHERE USER_ID = #{user_id}
+        AND USER_PW = #{user_pw}
+    </select>
+
+    <select id="login_search">
+        SELECT *
+        FROM USER
+        WHERE USER_verification_answer = #{question}
+    </select>
+    <select id="login_search_completed">
+        SELECT USER_ID, USER_PW
+        FROM USER
+        WHERE USER_ID= #{user_id}
+        AND USER_PW = #{user_pw}
+
+    </select>
+
+
+
+
 
 
 

@@ -63,38 +63,39 @@
 <th:block th:replace="~{layout/header :: header}"></th:block>
 <div class="login_search_container">
 
-    <form class="login_search_form" id="recovery-form">
-        <label for="username">사용자 이름:</label>
+    <form class="login_search_form" id="login_search" action="login_search" method="post">
+        <label for="user_id">사용자 이름:</label>
         <input
                 type="text"
-                id="username"
+                id="user_id"
+                name="user_id"
                 placeholder="사용자 이름 입력"
                 required
         />
 
         <label for="question">보안 질문:</label>
-        <select id="question">
+        <select id="question" >
             <option value="question">출생 도시는 어디인가요?</option>
             <option value="question">첫번째 학교 이름은 무엇인가요?</option>
             <option value="question">가장 좋아하는 음식은 무엇인가요?</option>
         </select>
 
         <label for="answer">답변:</label>
-        <input type="text" id="answer" placeholder="답변 입력" required />
+        <input type="text" id="answer" name="question" placeholder="답변 입력" required />
 
-        <button type="button" onclick="recoverAccount()">입력 완료</button>
+        <button type="submit" >입력 완료</button>
     </form>
 
 </div>
 <th:block th:replace="~{layout/footer :: footer}"></th:block>
 <script>
+/*
     // 저장된 사용자 정보
     const userData = {
         username: "user1",
         securityAnswers: {
             question: "서울"
-        },
-        resetUrl: "http://localhost:8080/login", // 아이디/비밀번호 찾기 결과 페이지 URL
+        }
     };
 
     function recoverAccount() {
@@ -129,6 +130,8 @@
             result.style.color = "red";
         }
     }
+    */
 </script>
+
 </body>
 </html>

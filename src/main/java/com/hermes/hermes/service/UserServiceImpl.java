@@ -33,4 +33,19 @@ public class UserServiceImpl implements UserService {
         userMapper.insertUser(user);
     }
 
+    @Override
+    public User login(String user_id, String user_pw) {
+        return userMapper.login(user_id,user_pw);
+    }
+
+    @Override
+    public User login_search(String question) {
+        return userMapper.login_search(question);
+    }
+
+    @Override
+    public User login_search_completed(String user_id, String user_pw) {
+        return userMapper.login_search_completed(user_id,user_pw);
+    }
+
 }
