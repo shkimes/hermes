@@ -39,13 +39,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User login_search(String question) {
-        return userMapper.login_search(question);
+    public User login_search_completed(String user_name,String user_verification_answer) {
+        return userMapper.login_search_completed(user_name , user_verification_answer);
     }
-
+/*
     @Override
-    public User login_search_completed(String user_id, String user_pw) {
-        return userMapper.login_search_completed(user_id,user_pw);
+    public User login_search(String answer) {
+        return userMapper.login_search(answer);
     }
+*/
 
 }

@@ -15,8 +15,8 @@ public interface UserService {
     User login(String user_id, String user_pw);
 
     // 질문으로 유저 찾기 기능
-    User login_search(String question);
+   // User login_search(String answer);
 
     // 결과 페이지 보여주기 기능
-    User login_search_completed(String user_id, String user_pw);
+    User login_search_completed(String user_pw,String user_verification_answer);
 }
