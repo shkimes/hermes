@@ -79,6 +79,12 @@
             color: #000;
             text-decoration: underline;
         }
+        .error-message {
+            color: red;
+            font-size:20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +92,9 @@
 
     <div class="login_container">
         <form class="login_form" action="/login" method="post">
+            <div th:if="${fail != null}" class="error-message" >
+                <span th:text="${fail}"></span>
+            </div>
             <label for="user_id">아이디</label>
             <input type="text" id="user_id" name="user_id" placeholder="아이디를 입력하시오" required>
             <label for="user_pw">비밀번호</label>
@@ -98,6 +107,7 @@
         <a href="signup" class = "signup">회원가입</a>
     </div>
     </div>
+
 <th:block th:replace="~{layout/footer :: footer}"></th:block>
 </body>
 </html>

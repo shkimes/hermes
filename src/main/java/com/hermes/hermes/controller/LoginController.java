@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-public class IndexController {
+public class LoginController {
     @Autowired
     private UserService userService;
 
@@ -46,9 +46,10 @@ public class IndexController {
                         Model model,
                         HttpSession session) {
         User user = userService.login(user_id, user_pw);
-        System.out.println(user);
+
         if(user!=null){
             session.setAttribute("loggedInUser", user);
+            System.out.println(session.getAttribute("loggedInUser"));
             return "redirect:/";
         }else {
             model.addAttribute("fail","유효하지 않은 아이디 또는 비밀번호 입니다");
