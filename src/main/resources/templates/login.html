@@ -92,9 +92,9 @@
 
     <div class="login_container">
         <form class="login_form" action="/login" method="post">
-            <div th:if="${fail != null}" class="error-message" >
-                <span th:text="${fail}"></span>
-            </div>
+<!--            <div th:if="${fail != null}" class="error-message" >-->
+<!--                <span th:text="${fail}"></span>-->
+<!--            </div>-->
             <label for="user_id">아이디</label>
             <input type="text" id="user_id" name="user_id" placeholder="아이디를 입력하시오" required
                    pattern="^[a-zA-Z0-9_]{5,20}$"
@@ -113,5 +113,8 @@
     </div>
 
 <th:block th:replace="~{layout/footer :: footer}"></th:block>
+<script th:if="${fail != null}">
+    alert("[[${fail}]]");
+</script>
 </body>
 </html>
