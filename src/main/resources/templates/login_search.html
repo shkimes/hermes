@@ -90,19 +90,19 @@
 
         form.addEventListener("submit", (event) => {
             // 폼 제출 시점에 값들을 가져옴
-            const userId = document.getElementById("user_name").value.trim();
+            const username = document.getElementById("user_name").value.trim();
             const question = document.getElementById("question").value;
-            const answer = document.getElementById("answer").value.trim();
+            const answer = document.getElementById("user_verification_answer").value.trim();
 
-            // 사용자 이름 검증 (2-20자 사이, 영문/한글/숫자 허용)
-            const userIdRegex = /^[a-zA-Z0-9가-힣]{2,20}$/;
+            // 사용자 이름 검증 (2-30자 사이, 영문/한글 허용)
+            const usernameRegex = /^[a-zA-Z가-힣]{2,30}$/;
 
-            // 답변 검증 (공백이 아닌 2자 이상)
-            const answerRegex = /^.{2,}$/;
+            // 답변 검증 (공백이 아닌 텍스트만)
+            const answerRegex = /^[^\s]+$/;
 
             // 사용자 이름 검증
-            if (!userIdRegex.test(userId)) {
-                alert("사용자 이름은 2-20자의 영문, 한글, 숫자만 가능합니다.");
+            if (!usernameRegex.test(username)) {
+                alert("사용자 이름은 2-30자의 영문, 한글만 가능합니다.");
                 document.getElementById("user_name").focus();
                 event.preventDefault();
                 return false;
@@ -118,8 +118,8 @@
 
             // 답변 검증
             if (!answerRegex.test(answer)) {
-                alert("답변은 2자 이상 입력해주세요.");
-                document.getElementById("answer").focus();
+                alert("답변은 공백없이 입력해주세요.");
+                document.getElementById("user_verification_answer").focus();
                 event.preventDefault();
                 return false;
             }
