@@ -113,8 +113,8 @@
     </div>
 
 <th:block th:replace="~{layout/footer :: footer}"></th:block>
-<script th:if="${fail != null}">
-    alert("[[${fail}]]");
+<script th:if="${error != null}">
+    alert("[[${error}]]");
 </script>
 </body>
 </html>

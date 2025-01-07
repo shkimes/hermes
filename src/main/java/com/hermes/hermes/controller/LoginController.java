@@ -52,7 +52,7 @@ public class LoginController {
             System.out.println(session.getAttribute("loggedInUser"));
             return "redirect:/";
         }else {
-            model.addAttribute("fail","유효하지 않은 아이디 또는 비밀번호 입니다");
+            model.addAttribute("error","유효하지 않은 아이디 또는 비밀번호 입니다");
             return "login";
         }
     }

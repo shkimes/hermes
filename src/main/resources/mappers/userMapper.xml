@@ -18,7 +18,7 @@
     <select id="login_search">
         SELECT *
         FROM USER
-        WHERE USER_verification_answer = #{answer}
+        WHERE USER_verification_answer = #{user_verification_answer}
     </select>
     <select id="login_search_completed">
         SELECT *
